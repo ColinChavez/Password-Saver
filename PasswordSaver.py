@@ -102,15 +102,17 @@ while True:
         #  you can test easily along the way.
         #
 
-        # Step 1: Loop through each value in the 2D List.
         def passwordLookup():
+            """
+            Finds the password that matches the website.
+            """
 
             global message
 
             for password in range(len(passwords)):
                 for item in range(len(passwords)):  # Step 1: Loop through each value in the 2D List.
                     print(end="")
-                if passwordToLookup == passwords[password][0]:  # Step 2: Check if password is found.
+                if passwordToLookup == passwords[password][0]:  # Step 2: Checks if password is found.
                     message = passwords[password][1]
                     print()
                     print("The Encrypted Password is: " + message)
@@ -118,6 +120,9 @@ while True:
         passwordLookup()
 
         def passwordDecrypt(encryptedMessage, key):
+            """
+            Decrypt's the user's password.
+            """
 
             decryptedMessage = ''
 
@@ -171,7 +176,6 @@ while True:
             """
             global passwords
             user_list = []
-            # user_list.append([])
             user_list.append(website)
             user_list.append(encryptedPassword)
             passwords.append(user_list)
@@ -200,6 +204,9 @@ while True:
         passwordToLookup = input()
 
         def deletePassword():
+            """
+            Allows the user to delete a website and password from the end of the list.
+            """
             for i in range(len(passwords)):
                 for x in range(len(passwords)):
                     print(end="")
